@@ -11,6 +11,7 @@
     $sWBLSEMFOXOXIDConfig  = class_exists('oxRegistry', false) ? oxRegistry::getConfig() : oxConfig::getInstance();
     $sWBLSEMFOXOXIDVersion = substr($sWBLSEMFOXOXIDConfig->getVersion(), 0, 5);
     $aWBLSEMFOXClasses     = array(
+        'oxarticle' => 'WBL/SEMFOX/app/model/wblsemfox_article',
         'oxsearch' => 'WBL/SEMFOX/app/model/wblsemfox_search'
     );
     $aWBLSEMFOXFiles       = array();
@@ -48,6 +49,12 @@
                 'name'  => 'sWBLSEMFOXSuggestThrottleTime',
                 'type'  => 'str',
                 'value' => 50
+            ),
+            array(
+                'group' => 'WBL_SEMFOX_SUGGEST',
+                'name'  => 'sWBLSEMFOXSuggestEnterCallback',
+                'type'  => 'str',
+                'value' => 'if (link) { window.location = link; } else { $("#searchParam").closest("form").trigger("submit"); }'
             ),
             array(
                 'group' => 'WBL_SEMFOX_CONNECTION',
