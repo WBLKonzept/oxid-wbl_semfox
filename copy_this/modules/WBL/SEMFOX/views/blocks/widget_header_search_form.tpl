@@ -6,7 +6,7 @@
 	[{oxstyle include=$sModuleCSS}]
 	[{oxscript include=$sModuleJS}]
 
-	<script type="text/javascript">
+	[{capture name='sSEMFOXSuggestJS'}]
 		var settings = {
 			suggestUrl                : 'http://semfox.com:8585/queries/suggest?apiKey=apiKey=kftruanreiotsdaifaiseapeiorsdafb&customerId=6&query=',
 			queryVisualizationHeadline: 'Ihre Suche Visualisiert',
@@ -25,5 +25,6 @@
 		};
 
 		$('#searchParam').unibox(settings);
-	</script>
+	[{/capture}]
+	[{oxscript add=$smarty.capture.sSEMFOXSuggestJS}]
 [{/if}]
