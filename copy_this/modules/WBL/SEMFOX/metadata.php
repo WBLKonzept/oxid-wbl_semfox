@@ -22,9 +22,11 @@
     $aModule = array(
         'author'      => 'WBL Konzept',
         'blocks' => array(
-            'block' => 'widget_header_search_form',
-            'file' => 'views/blocks/widget_header_search_form.tpl',
-            'template' => 'widget/header/search.tpl'
+            array(
+                'block' => 'widget_header_search_form',
+                'file' => 'views/blocks/widget_header_search_form.tpl',
+                'template' => 'widget/header/search.tpl'
+            )
         ),
         'description' => array(
             'de' => 'SEMFOX-Connector',
