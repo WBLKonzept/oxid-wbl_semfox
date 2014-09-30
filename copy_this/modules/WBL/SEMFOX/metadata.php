@@ -9,8 +9,9 @@
      */
 
     $sMetadataVersion      = '1.1';
+    $sWBLSEMFOXOXIDConfig  = class_exists('oxRegistry', false) ? oxRegistry::getConfig() : oxConfig::getInstance();
+    $sWBLSEMFOXOXIDVersion = $sWBLSEMFOXOXIDConfig->getVersion();
     $aWBLSEMFOXClasses = array();
-
     $aWBLSEMFOXFiles = array();
 
     foreach ($aWBLSEMFOXClasses as $sClass) {
@@ -35,13 +36,32 @@
         'id'          => 'WBL_SEMFOX',
         'settings'    => array(
             array(
-                'group' => 'WBL_SEMFOX_GENERAL'
+                'group' => 'WBL_SEMFOX_GENERAL',
+                'name'  => 'sWBLSEMFOXAPIKey',
+                'type'  => (version_compare($sSysVersionForLoader, '4.9.0', '>=')) ? 'password' : 'str'
             ),
             array(
-                'group' => 'WBL_SEMFOX_SUGGEST'
+                'group' => 'WBL_SEMFOX_GENERAL',
+                'name'  => 'sWBLSEMFOXCustomerId',
+                'type'  => 'str'
             ),
             array(
-                'group' => 'WBL_SEMFOX_CONNECTION'
+                'group' => 'WBL_SEMFOX_SUGGEST',
+                'name'  => 'sWBLSEMFOXSuggestThrottleTime',
+                'type'  => 'str',
+                'value' => 50
+            ),
+            array(
+                'group' => 'WBL_SEMFOX_CONNECTION',
+                'name'  => 'sWBLSEMFOXPort',
+                'type'  => 'str',
+                'value' => '8585'
+            ),
+            array(
+                'group' => 'WBL_SEMFOX_CONNECTION',
+                'name'  => 'sWBLSEMFOXConnectionTimeout',
+                'type'  => 'str',
+                'value' => '3'
             )
         ),
         'title'       => 'WBL SEMFOX',
