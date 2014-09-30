@@ -15,7 +15,7 @@
 			[{* Is there template output and does it not contain the template name itself indicating that the template is missing *}]
 			[{if $sSEMFOXExtraHTML && $sSEMFOXExtraHTML|strpos:'custom/semfox-suggest.tpl' === false}]
 				[{* You should prevent the simple ' in your HTML Codes! *}]
-				extraHtml                 : '[{$sSEMFOXExtraHTML|replace:"'":"\'"}]',
+				extraHtml : '[{$sSEMFOXExtraHTML|replace:"'":"\'"}]',
 			[{/if}]
 			suggestUrl                : 'http://semfox.com:8585/queries/suggest?apiKey=apiKey=kftruanreiotsdaifaiseapeiorsdafb&customerId=6&query=',
 			queryVisualizationHeadline: 'Ihre Suche Visualisiert',
