@@ -9,7 +9,7 @@
 
 	[{capture name='sSEMFOXSuggestJS'}]
 		var settings = {
-			suggestUrl                : 'http://semfox.com:8585/queries/suggest?apiKey=apiKey=kftruanreiotsdaifaiseapeiorsdafb&customerId=6&query=',
+			suggestUrl                : [{$oConfig->getConfigParam('sWBLSEMFOXPort')}],
 			queryVisualizationHeadline: 'Ihre Suche Visualisiert',
 			enterCallback             : function (text, link) {
 				console.log(text);
@@ -22,7 +22,7 @@
 				'<input type="number" name="quantity" min="1" max="99" value="1">' +
 				'<input type="submit" value="in den Warenkorb"></form> | ' +
 				'<a href="http://emmasenkel.de/merkzettel?product=##articleNumber##">Auf den Merkzettel</a>',
-			throttleTime              : 50
+			throttleTime              : [{$oConfig->getConfigParam('sWBLSEMFOXSuggestThrottleTime')}]
 		};
 
 		$('#searchParam').unibox(settings);
