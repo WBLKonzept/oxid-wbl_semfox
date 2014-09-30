@@ -93,6 +93,8 @@
 
                     if ($sQuery = $this->getWBLSEMFOXSearchSelect($oHit, $mSortBy)) {
                         /** @var oxArticleList $oList */
+                        $oList = oxNew('oxarticlelist');
+
                         $oList->setSqlLimit($iOffset, $iLimit);
                         $oList->selectString($sQuery);
                         // TODO Remove deleted items!
