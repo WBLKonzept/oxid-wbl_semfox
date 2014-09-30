@@ -11,7 +11,9 @@
     $sMetadataVersion      = '1.1';
     $sWBLSEMFOXOXIDConfig  = class_exists('oxRegistry', false) ? oxRegistry::getConfig() : oxConfig::getInstance();
     $sWBLSEMFOXOXIDVersion = $sWBLSEMFOXOXIDConfig->getVersion();
-    $aWBLSEMFOXClasses = array();
+    $aWBLSEMFOXClasses = array(
+        'oxsearch' => 'WBL\SEMFOX\App\Model\Search.php'
+    );
     $aWBLSEMFOXFiles = array();
 
     foreach ($aWBLSEMFOXClasses as $sClass) {
