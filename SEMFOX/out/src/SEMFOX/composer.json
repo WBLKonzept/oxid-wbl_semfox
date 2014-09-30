@@ -1,0 +1,19 @@
+{
+	"autoload"         : {
+		"psr-4": {
+			"SEMFOX\\": "src/SEMFOX/"
+		}
+	},
+	"name"             : "wblkonzept/sfapi",
+	"version"          : "0.0.4-dev",
+	"description"      : "API wrapper for semfox",
+	"license"          : "GPL v3",
+	"authors"          : [
+		{
+			"name" : "blange",
+			"email": "code@wbl-konzept.de"
+		}
+	],
+	"minimum-stability": "stable",
+	"require"          : {}
+}
