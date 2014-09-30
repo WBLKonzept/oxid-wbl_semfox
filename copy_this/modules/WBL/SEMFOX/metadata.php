@@ -1,32 +1,26 @@
 <?php
     /**
-     * Module-Metadata for the SEMFOX module.
+     * ./modules/WBL/SEMFOX/metadata.php
      * @author     blange <code@wbl-konzept.de>
      * @category   modules
      * @package    WBL_SEMFOX
-     * @subpackage oxAutoload
      * @version    $id$
      */
 
     $sMetadataVersion      = '1.1';
     $sWBLSEMFOXOXIDConfig  = class_exists('oxRegistry', false) ? oxRegistry::getConfig() : oxConfig::getInstance();
-    $sWBLSEMFOXOXIDVersion = $sWBLSEMFOXOXIDConfig->getVersion();
-    $aWBLSEMFOXClasses = array(
-        'oxsearch' => 'WBL\SEMFOX\App\Model\Search.php'
+    $sWBLSEMFOXOXIDVersion = substr($sWBLSEMFOXOXIDConfig->getVersion(), 0, 5);
+    $aWBLSEMFOXClasses     = array(
+        'oxsearch' => 'WBL/SEMFOX/app/model/wblsemfox_search'
     );
-    $aWBLSEMFOXFiles = array();
-
-    foreach ($aWBLSEMFOXClasses as $sClass) {
-        // OXID needs the slash
-        $aWBLSEMFOXFiles[$sClass] = str_replace('_', '/', $sClass) . '.php';
-    } // foreach
+    $aWBLSEMFOXFiles       = array();
 
     $aModule = array(
         'author'      => 'WBL Konzept',
-        'blocks' => array(
+        'blocks'      => array(
             array(
-                'block' => 'widget_header_search_form',
-                'file' => 'views/blocks/widget_header_search_form.tpl',
+                'block'    => 'widget_header_search_form',
+                'file'     => 'views/blocks/widget_header_search_form.tpl',
                 'template' => 'widget/header/search.tpl'
             )
         ),
@@ -42,7 +36,7 @@
             array(
                 'group' => 'WBL_SEMFOX_GENERAL',
                 'name'  => 'sWBLSEMFOXAPIKey',
-                'type'  => (version_compare($sSysVersionForLoader, '4.9.0', '>=')) ? 'password' : 'str'
+                'type'  => (version_compare($sWBLSEMFOXOXIDVersion, '4.9.0', '>=')) ? 'password' : 'str'
             ),
             array(
                 'group' => 'WBL_SEMFOX_GENERAL',
