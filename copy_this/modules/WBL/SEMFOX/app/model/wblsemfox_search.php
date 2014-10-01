@@ -156,11 +156,12 @@
                 $sReturn  = $oArticle->buildSelectString() . ' AND ' . $oArticle->getSqlActiveSnippet();
 
                 foreach ($oHit->searchResults as $aHits) {
-                    $aHit = current($aHits);// TODO Config which of the hit?
+                    $aHit = current($aHits);// TODO Config which of the hits?
                     $aNos[] = $aHit->articleNumber;
                 } // foreach
 
-                $sReturn .= ' AND ' . $this->getConfig()->getConfigParam('sWBLSEMFOXIDField') . ' IN (' . implode(',', oxDb::getDb()->quoteArray($aNos)) . ')';
+                $sReturn .= ' AND ' . $this->getConfig()->getConfigParam('sWBLSEMFOXIDField') . ' IN (' .
+                    implode(',', oxDb::getDb()->quoteArray($aNos)) . ')';
 
                 if ($mSQLSorting) {
                     $sReturn .= 'ORDER BY ' . $mSQLSorting;
@@ -180,9 +181,9 @@
             if (!$this->oWBLSEMFOXWrapper) {
                 $oConfig = $this->getConfig();
                 $this->oWBLSEMFOXWrapper = new Wrapper(array(
-                    'apiKey' => $oConfig->getConfigParam('sWBLSEMFOXAPIKey'),
+                    'apiKey'     => $oConfig->getConfigParam('sWBLSEMFOXAPIKey'),
                     'customerId' => $oConfig->getConfigParam('sWBLSEMFOXCustomerId'),
-                    'restPort' => $oConfig->getConfigParam('sWBLSEMFOXPort'),
+                    'restPort'   => $oConfig->getConfigParam('sWBLSEMFOXPort')
                 ));
             } // if
 
