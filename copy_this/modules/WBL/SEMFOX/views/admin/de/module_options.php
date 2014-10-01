@@ -5,6 +5,7 @@
         'HELP_SHOP_MODULE_sWBLSEMFOXIDField'              => 'Experten-Option: Dieses OXID-Feld wird genutzt, um Suchergebnisse und L&ouml;sch-Requests mit SEMFOX zu verkn&uuml;pfen.',
         'HELP_SHOP_MODULE_sWBLSEMFOXSuggestEnterCallback' => 'Experten-Option: Dies ist der JavaScript-Code-Inhalt f&uuml;r den Enter-Callback. Bitte konsultieren Sie vorher Ihre SEMFOX-Dokumentation. Der Auslieferungszustand unterst&uuml;tzt das azure-Theme.',
         'SHOP_MODULE_aWBLSEMFOXFieldMapping'              => 'Wie hei&szlig;en die OXID-Felder/Methoden bei SEMFOX im Import etc.',
+        'SHOP_MODULE_bWBLSEMFOXWithLogging'               => 'Logging aktiv?',
         'SHOP_MODULE_GROUP_WBL_SEMFOX_ARTICLES'           => 'Artikel',
         'SHOP_MODULE_sWBLSEMFOXIDField'                   => '! ID-Feld',
         'SHOP_MODULE_sWBLSEMFOXIDField_oxartnum'          => 'Artikelnummer',

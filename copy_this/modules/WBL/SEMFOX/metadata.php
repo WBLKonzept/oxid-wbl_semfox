@@ -12,9 +12,12 @@
     $sWBLSEMFOXOXIDVersion = substr($sWBLSEMFOXOXIDConfig->getVersion(), 0, 5);
     $aWBLSEMFOXClasses     = array(
         'oxarticle' => 'WBL/SEMFOX/app/model/wblsemfox_article',
-        'oxsearch' => 'WBL/SEMFOX/app/model/wblsemfox_search'
+        'oxsearch'  => 'WBL/SEMFOX/app/model/wblsemfox_search'
     );
-    $aWBLSEMFOXFiles       = array();
+
+    $aWBLSEMFOXFiles = array(
+        'WBLSEMFOX_Logger' => 'WBL/SEMFOX/app/model/wblsemfox_logger.php'
+    );
 
     $aModule = array(
         'author'      => 'WBL Konzept',
@@ -43,6 +46,12 @@
                 'group' => 'WBL_SEMFOX_GENERAL',
                 'name'  => 'sWBLSEMFOXCustomerId',
                 'type'  => 'str'
+            ),
+            array(
+                'group' => 'WBL_SEMFOX_GENERAL',
+                'name'  => 'bWBLSEMFOXWithLogging',
+                'type'  => 'bool',
+                'value' => true
             ),
             array(
                 'group' => 'WBL_SEMFOX_SUGGEST',

@@ -73,6 +73,7 @@
          * @param mixed $mInitialSearchManufacturer initial Manufacturer to seearch for
          * @param mixed $mSortBy sort by
          * @return oxArticleList
+         * @todo Remove the deleted items.
          */
         public function getSearchArticles($mSearchParamForQuery = false,  $mInitialSearchCat = false,
             $mInitialSearchVendor = false,  $mInitialSearchManufacturer = false,  $mSortBy = false)
@@ -97,10 +98,11 @@
 
                         $oList->setSqlLimit($iOffset, $iLimit);
                         $oList->selectString($sQuery);
-                        // TODO Remove deleted items!
                     } // if
                 } catch (SEMFOXException $oExc) {
-                    exit($oExc);
+                    /** @var WBLSEMFOX_Logger $oLogger */
+                    $oLogger = class_exists('oxRegistry') ? oxRegistry::get('WBLSEMFOX_Logger') : oxNew('WBLSEMFOX_Logger');
+                    $oLogger->logErrror($oExc);
                 } // catch
             } // if
 
@@ -156,12 +158,11 @@
                 $sReturn  = $oArticle->buildSelectString() . ' AND ' . $oArticle->getSqlActiveSnippet();
 
                 foreach ($oHit->searchResults as $aHits) {
-                    $aHit = current($aHits);// TODO Config which of the hits?
+                    $aHit = current($aHits);// TODO Config which of the hit?
                     $aNos[] = $aHit->articleNumber;
                 } // foreach
 
-                $sReturn .= ' AND ' . $this->getConfig()->getConfigParam('sWBLSEMFOXIDField') . ' IN (' .
-                    implode(',', oxDb::getDb()->quoteArray($aNos)) . ')';
+                $sReturn .= ' AND ' . $this->getConfig()->getConfigParam('sWBLSEMFOXIDField') . ' IN (' . implode(',', oxDb::getDb()->quoteArray($aNos)) . ')';
 
                 if ($mSQLSorting) {
                     $sReturn .= 'ORDER BY ' . $mSQLSorting;
@@ -181,9 +182,9 @@
             if (!$this->oWBLSEMFOXWrapper) {
                 $oConfig = $this->getConfig();
                 $this->oWBLSEMFOXWrapper = new Wrapper(array(
-                    'apiKey'     => $oConfig->getConfigParam('sWBLSEMFOXAPIKey'),
+                    'apiKey' => $oConfig->getConfigParam('sWBLSEMFOXAPIKey'),
                     'customerId' => $oConfig->getConfigParam('sWBLSEMFOXCustomerId'),
-                    'restPort'   => $oConfig->getConfigParam('sWBLSEMFOXPort')
+                    'restPort' => $oConfig->getConfigParam('sWBLSEMFOXPort'),
                 ));
             } // if
 

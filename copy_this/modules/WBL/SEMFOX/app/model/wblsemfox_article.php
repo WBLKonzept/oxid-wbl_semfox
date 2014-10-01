@@ -102,7 +102,9 @@
                     'articleNumber' => $this->{'oxarticles__' . $this->getConfig()->getConfigParam('sWBLSEMFOXIDField')}->value
                 ));
             } catch (SEMFOXException $oExc) {
-                // TODO: Error-Log, PSR3!
+                /** @var WBLSEMFOX_Logger $oLogger */
+                $oLogger = class_exists('oxRegistry') ? oxRegistry::get('WBLSEMFOX_Logger') : oxNew('WBLSEMFOX_Logger');
+                $oLogger->logErrror($oExc);
             } // catch
 
             return $iReturn;
@@ -145,7 +147,9 @@
             try {
                 $this->getWBLSEMFOXWrapper()->products->put($aData); // No Return value till yet.
             } catch (SEMFOXException $oExc) {
-                 // TODO Log etc?
+                /** @var WBLSEMFOX_Logger $oLogger */
+                $oLogger = class_exists('oxRegistry') ? oxRegistry::get('WBLSEMFOX_Logger') : oxNew('WBLSEMFOX_Logger');
+                $oLogger->logErrror($oExc);
             } // catch
 
             return $this;
