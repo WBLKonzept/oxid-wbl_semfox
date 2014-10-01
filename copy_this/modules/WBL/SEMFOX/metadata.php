@@ -47,8 +47,8 @@
             array(
                 'group' => 'WBL_SEMFOX_SUGGEST',
                 'name'  => 'sWBLSEMFOXSuggestThrottleTime',
-                'type'  => 'str',
-                'value' => 50
+                'type'  => 'num',
+                'value' => '50'
             ),
             array(
                 'group' => 'WBL_SEMFOX_SUGGEST',
@@ -65,7 +65,7 @@
             array(
                 'group' => 'WBL_SEMFOX_CONNECTION',
                 'name'  => 'sWBLSEMFOXConnectionTimeout',
-                'type'  => 'str',
+                'type'  => 'num',
                 'value' => '3'
             ),
             array(

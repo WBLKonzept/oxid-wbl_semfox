@@ -17,12 +17,12 @@
 				[{* You should prevent the simple ' in your HTML Codes! *}]
 				extraHtml : '[{$sSEMFOXExtraHTML|replace:"'":"\'"}]',
 			[{/if}]
-			suggestUrl                : 'http://semfox.com:8585/queries/suggest?apiKey=apiKey=kftruanreiotsdaifaiseapeiorsdafb&customerId=6&query=',
+			suggestUrl                : 'http://semfox.com:[{$oConfig->getConfigParam('sWBLSEMFOXPort')|default:'8585'}]/queries/suggest?apiKey=apiKey=[{$oConfig->getConfigParam('sWBLSEMFOXAPIKey')}]&customerId=[{$oConfig->getConfigParam('sWBLSEMFOXCustomerId')}]&query=',
 			queryVisualizationHeadline: 'Ihre Suche Visualisiert',
 			enterCallback             : function (text, link) { [{$oConfig->getConfigParam('sWBLSEMFOXSuggestEnterCallback')}] },
 			instantVisualFeedback     : 'none',
 			highlight                 : true,
-			throttleTime              : 50
+			throttleTime              : [{$oConfig->getConfigParam('sWBLSEMFOXSuggestThrottleTime')|default:50}]
 		};
 
 		$('#searchParam').unibox(settings);
