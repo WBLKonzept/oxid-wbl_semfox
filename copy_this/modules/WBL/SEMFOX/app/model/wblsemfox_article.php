@@ -71,8 +71,8 @@
          * @param string|void $mAction   Action constant
          * @param string|void $mOXID     Article ID
          * @param string|void $mParentId Parent ID
-         *
          * @return mixed
+         * @todo   Should the stock update be handled aswell? For fast stock changes, we should write a batch update!
          */
         public function onChange($mAction = null, $mOXID = null, $mParentId = null)
         {
@@ -80,7 +80,7 @@
 
             if ($mAction === ACTION_DELETE && $this->isLoaded()) {
                 $this->deleteForWBLSEMFOX();
-            } elseif ($mAction === ACTION_INSERT || $mAction === ACTION_UPDATE) { // TODO Stock Handling?
+            } elseif ($mAction === ACTION_INSERT || $mAction === ACTION_UPDATE) {
                 $this->updateWBLSEMFOX();
             } // else
 
