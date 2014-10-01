@@ -55,6 +55,23 @@
                 'name'  => 'sWBLSEMFOXSuggestEnterCallback',
                 'type'  => 'str',
                 'value' => 'if (link) { window.location = link; } else { $("#searchParam").closest("form").trigger("submit"); }'
+            ), array(
+                'group' => 'WBL_SEMFOX_SUGGEST',
+                'name'  => 'bWBLSEMFOXHighlight',
+                'type'  => 'bool',
+                'value' => true
+            ),
+            array(
+                'group' => 'WBL_SEMFOX_SUGGEST',
+                'name'  => 'bWBLSEMFOXQueryVisualizationHeadline',
+                'type'  => 'str',
+                'value' => 'Ihre Suche Visualisiert'
+            ),
+            array(
+                'group' => 'WBL_SEMFOX_SUGGEST',
+                'name'  => 'bWBLSEMFOXInstantVisualFeedback',
+                'type'  => 'str',
+                'value' => 'none'
             ),
             array(
                 'group' => 'WBL_SEMFOX_CONNECTION',
