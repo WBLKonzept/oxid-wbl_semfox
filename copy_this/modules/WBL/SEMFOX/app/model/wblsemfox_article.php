@@ -28,6 +28,21 @@
         protected $oWBLSEMFOXWrapper = null;
 
         /**
+         * Returns the name of the main category in the actual language for the actual subshop.
+         * @return string
+         */
+        public function getMainCatNameForWBLSEMFOX()
+        {
+            $sReturn = '';
+
+            if (($oCat = $this->getCategory()) && ($oCat->getId())) {
+                $sReturn = $oCat->oxcategories__oxtitle->value;
+            } // if
+
+            return $sReturn;
+        } // function
+
+        /**
          * Lazy-Loads the SEMFOX-Wrapper.
          * @return \SEMFOX\Wrapper
          */
@@ -65,7 +80,9 @@
 
             if ($mAction === ACTION_DELETE && $this->isLoaded()) {
                 $this->deleteForWBLSEMFOX();
-            } // if
+            } elseif ($mAction === ACTION_INSERT || $mAction === ACTION_UPDATE) { // TODO Stock Handling?
+                $this->updateWBLSEMFOX();
+            } // else
 
             return $mParent;
         } // function
@@ -82,7 +99,7 @@
 
             try {
                 $iReturn = (int) $this->getWBLSEMFOXWrapper()->products->delete(array(
-                    'articleNumber' => $this->oxarticles__oxartnum->value
+                    'articleNumber' => $this->{'oxarticles__' . $this->getConfig()->getConfigParam('sWBLSEMFOXIDField')}->value
                 ));
             } catch (SEMFOXException $oExc) {
                 // TODO: Error-Log, PSR3!
@@ -100,6 +117,36 @@
         {
             $this->oWBLSEMFOXWrapper = $oWrapper;
             unset($oWrapper);
+
+            return $this;
+        } // function
+
+        /**
+         * Updates the article for semfox.
+         * @return WBLSEMFOX_Article
+         * @todo   Refactor to Request-Adapter classes?
+         */
+        protected function updateWBLSEMFOX()
+        {
+            if ($aMapping = $this->getConfig()->getConfigParam('aWBLSEMFOXFieldMapping')) {
+                $aData = array();
+
+                foreach ($aMapping as $sOXID => $sSEMFOX) {
+                    $aData[$sSEMFOX] = $sOXID;
+
+                    if (strpos($sOXID, '(') !== false) {
+                        $aData[$sSEMFOX] = $this->{str_replace('()', '', $sOXID)}();
+                    } else {
+                        $aData[$sSEMFOX] = $this->{'oxarticles__' . $sOXID}->value;
+                    } // else
+                } // foreach
+            } // if
+
+            try {
+                $this->getWBLSEMFOXWrapper()->products->put($aData); // No Return value till yet.
+            } catch (SEMFOXException $oExc) {
+                 // TODO Log etc?
+            } // catch
 
             return $this;
         } // function

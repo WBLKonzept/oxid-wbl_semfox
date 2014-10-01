@@ -67,6 +67,25 @@
                 'name'  => 'sWBLSEMFOXConnectionTimeout',
                 'type'  => 'str',
                 'value' => '3'
+            ),
+            array(
+                'constraints' => 'oxid|oxartnum|oxean',
+                'group'       => 'WBL_SEMFOX_ARTICLES',
+                'name'        => 'sWBLSEMFOXIDField',
+                'type'        => 'select',
+                'value'       => 'oxartnum'
+            ),
+            array(
+                'group' => 'WBL_SEMFOX_ARTICLES',
+                'name'  => 'aWBLSEMFOXFieldMapping',
+                'type'  => 'aarr',
+                'value' => array(
+                    'getMainCatNameForWBLSEMFOX()' => 'category',
+                    'getPictureUrl()'              => 'image',
+                    'oxartnum'                     => 'articleNumber',
+                    'oxean'                        => 'ean',
+                    'oxtitle'                      => 'name',
+                )
             )
         ),
         'title'       => 'WBL SEMFOX',
