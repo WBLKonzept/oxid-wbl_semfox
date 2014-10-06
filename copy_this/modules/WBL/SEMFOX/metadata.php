@@ -57,13 +57,32 @@
                 'group' => 'WBL_SEMFOX_SUGGEST',
                 'name'  => 'sWBLSEMFOXSuggestThrottleTime',
                 'type'  => 'num',
-                'value' => '50'
+                'value' => 50
             ),
             array(
                 'group' => 'WBL_SEMFOX_SUGGEST',
                 'name'  => 'sWBLSEMFOXSuggestEnterCallback',
                 'type'  => 'str',
                 'value' => 'if (link) { window.location = link; } else { $("#searchParam").closest("form").trigger("submit"); }'
+            ),
+            array(
+                'group' => 'WBL_SEMFOX_SUGGEST',
+                'name'  => 'bWBLSEMFOXHighlight',
+                'type'  => 'bool',
+                'value' => true
+            ),
+            array(
+                'group' => 'WBL_SEMFOX_SUGGEST',
+                'name'  => 'sWBLSEMFOXQueryVisualizationHeadline',
+                'type'  => 'bool',
+                'value' => 'Ihre Suche Visualisiert'
+            ),
+            array(
+                'group'       => 'WBL_SEMFOX_SUGGEST',
+                'name'        => 'sWBLSEMFOXQueryInstantFeedbackPos',
+                'type'        => 'select',
+                'value'       => 'none',
+                'constraints' => 'top|bottom|all|none'
             ),
             array(
                 'group' => 'WBL_SEMFOX_CONNECTION',
@@ -75,7 +94,7 @@
                 'group' => 'WBL_SEMFOX_CONNECTION',
                 'name'  => 'sWBLSEMFOXConnectionTimeout',
                 'type'  => 'num',
-                'value' => '3'
+                'value' => 3
             ),
             array(
                 'constraints' => 'oxid|oxartnum|oxean',
