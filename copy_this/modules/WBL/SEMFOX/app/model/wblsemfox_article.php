@@ -147,7 +147,7 @@
             } // if
 
             try {
-                $this->getWBLSEMFOXWrapper()->products->put(array('productsJsonArray' => $aData)); // No Return value till yet.
+                $this->getWBLSEMFOXWrapper()->products->put(array('productsJsonArray' => array($aData))); // No Return value till yet.
             } catch (SEMFOXException $oExc) {
                 /** @var WBLSEMFOX_Logger $oLogger */
                 $oLogger = class_exists('oxRegistry') ? oxRegistry::get('WBLSEMFOX_Logger') : oxNew('WBLSEMFOX_Logger');
