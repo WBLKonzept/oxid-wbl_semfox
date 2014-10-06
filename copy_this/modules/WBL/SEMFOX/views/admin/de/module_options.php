@@ -12,4 +12,8 @@
         'SHOP_MODULE_sWBLSEMFOXIDField_oxean'             => 'EAN',
         'SHOP_MODULE_sWBLSEMFOXIDField_oxid'              => 'OXID',
         'SHOP_MODULE_sWBLSEMFOXSuggestEnterCallback'      => '! Callback-Inhalt f&uuml;r die Enter-Taste',
+        'bWBLSEMFOXInstantVisualFeedback'                 => 'Visuelles Feedback aus',
+        'bWBLSEMFOXQueryVisualizationHeadline'            => 'Suchevisualisierung',
+        'sWBLSEMFOXSuggestEnterCallback'                  => 'Vorschlag eingeben',
+        'sWBLSEMFOXSuggestThrottleTime'                   => 'Drosselung',
     );
