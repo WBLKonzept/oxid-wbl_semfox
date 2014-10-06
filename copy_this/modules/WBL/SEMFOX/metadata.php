@@ -119,5 +119,5 @@
         'title'       => 'WBL SEMFOX',
         'thumbnail'   => 'wbl_logo.jpg',
         'url'         => 'http://wbl-konzept.de',
-        'version'     => '1.0.0-dev'
+        'version'     => '1.0.0'
     );
