@@ -80,7 +80,9 @@
 
             if ($mAction === ACTION_DELETE && $this->isLoaded()) {
                 $this->deleteForWBLSEMFOX();
-            } elseif ($mAction === ACTION_INSERT || $mAction === ACTION_UPDATE) {
+            } elseif ($this->getId() &&
+                ($mAction === ACTION_INSERT || $mAction === ACTION_UPDATE))
+            {
                 $this->updateWBLSEMFOX();
             } // else
 
@@ -145,7 +147,7 @@
             } // if
 
             try {
-                $this->getWBLSEMFOXWrapper()->products->put($aData); // No Return value till yet.
+                $this->getWBLSEMFOXWrapper()->products->put(array('productsJsonArray' => $aData)); // No Return value till yet.
             } catch (SEMFOXException $oExc) {
                 /** @var WBLSEMFOX_Logger $oLogger */
                 $oLogger = class_exists('oxRegistry') ? oxRegistry::get('WBLSEMFOX_Logger') : oxNew('WBLSEMFOX_Logger');

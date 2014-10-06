@@ -16,7 +16,6 @@
      * @category   modules
      * @package    WBL_SEMFOX
      * @subpackage app/model
-     * @todo       Performance-Logging?
      * @version    $id$
      */
     class WBLSEMFOX_Logger extends oxBase {
@@ -51,7 +50,6 @@
                 $oUtils->writeToLog(date('r') . ': ' . $sMessage . "\n", $sLogFile);
             } // if
 
-            // Bombard the admin every time, if the log is disabled.
             if ($bWithMail) {
                 oxNew('oxemail')->sendEmail($sMail, 'SEMFOX error', $sMessage);
             } // if
