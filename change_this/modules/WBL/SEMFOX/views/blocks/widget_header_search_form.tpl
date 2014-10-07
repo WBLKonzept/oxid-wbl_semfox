@@ -16,7 +16,7 @@
 			[{* Is there template output and does it not contain the template name itself indicating that the template is missing *}]
 			[{if $sSEMFOXExtraHTML && $sSEMFOXExtraHTML|strpos:'custom/semfox-suggest.tpl' === false}]
 				[{* You should prevent the simple ' in your HTML Codes! *}]
-				extraHtml : '[{$sSEMFOXExtraHTML|replace:"'":"\'"}]',
+				extraHtml : '[{$sSEMFOXExtraHTML|strip|replace:"'":"\'"}]',
 			[{/if}]
 			suggestUrl                : 'http://semfox.com:[{$oConfig->getConfigParam('sWBLSEMFOXPort')|default:'8585'}]/queries/suggest?apiKey=apiKey=[{$oConfig->getConfigParam('sWBLSEMFOXAPIKey')}]&customerId=[{$oConfig->getConfigParam('sWBLSEMFOXCustomerId')}]&query=',
 			queryVisualizationHeadline: '[{$oConfig->getConfigParam('sWBLSEMFOXQueryVisualizationHeadline')|default:"Ihre Suche Visualisiert"}]',
@@ -28,7 +28,7 @@
 						window.location = link;
 					} else {
 						$("#searchParam").closest("form").trigger("submit");
-					} // else
+					}
 				[{/if}]
 			},
 			instantVisualFeedback     : '[{$oConfig->getConfigParam('sWBLSEMFOXQueryInstantFeedbackPos')|default:"none"}]',
