@@ -47,7 +47,7 @@
             $oConfig = $this->getConfig();
 
             // sets active page like the oxid standard.
-            $this->iActPage = (int) $oConfig->getRequestParameter('pgNr');
+            $this->iActPage = (int) $oConfig->getParameter('pgNr');
             $this->iActPage = ($this->iActPage < 0) ? 0 : $this->iActPage;
 
             $iNrOfCatArticles = (int) $oConfig->getConfigParam('iNrofCatArticles');
