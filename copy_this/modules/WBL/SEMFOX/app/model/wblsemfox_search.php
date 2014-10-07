@@ -157,14 +157,15 @@
                 /** @var oxArticle $oArticle */
                 $aNos     = array();
                 $oArticle = oxNew('oxarticle');
+                $oDb      = getDb();
                 $sReturn  = $oArticle->buildSelectString() . ' AND ' . $oArticle->getSqlActiveSnippet();
 
                 foreach ($oHit->searchResults as $aHits) {
                     $aHit = current($aHits);// TODO Config which of the hit?
-                    $aNos[] = $aHit->articleNumber;
+                    $aNos[] = $oDb->quote($aHit->articleNumber);
                 } // foreach
 
-                $sReturn .= ' AND ' . $this->getConfig()->getConfigParam('sWBLSEMFOXIDField') . ' IN (' . implode(',', oxDb::getDb()->quoteArray($aNos)) . ')';
+                $sReturn .= ' AND ' . $this->getConfig()->getConfigParam('sWBLSEMFOXIDField') . ' IN (' . implode(',', $aNos) . ')';
 
                 if ($mSQLSorting) {
                     $sReturn .= 'ORDER BY ' . $mSQLSorting;
