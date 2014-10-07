@@ -28,7 +28,7 @@
 						window.location = link;
 					} else {
 						$("#searchParam").closest("form").trigger("submit");
-					} // else
+					}
 				[{/if}]
 			},
 			instantVisualFeedback     : '[{$oConfig->getConfigParam('sWBLSEMFOXQueryInstantFeedbackPos')|default:"none"}]',
