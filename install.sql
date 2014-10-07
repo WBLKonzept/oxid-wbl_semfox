@@ -1,0 +1,1 @@
+INSERT INTO `oxtplblocks` (`OXID`, `OXACTIVE`, `OXSHOPID`, `OXTEMPLATE`, `OXBLOCKNAME`, `OXPOS`, `OXFILE`, `OXMODULE`) VALUES ('0cedac001ab46eca2ecb756c5781b7f6', '1', '1', 'widget/header/search.tpl', 'widget_header_search_form', '1', 'widget_header_search_form.tpl', 'WBL_SEMFOX');

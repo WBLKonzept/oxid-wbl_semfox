@@ -1,2 +1,2 @@
 <?php
-    require_once OX_BASE_PATH . 'vendor/autoload.php';
+    require_once getShopBasePath() . 'vendor/autoload.php';
