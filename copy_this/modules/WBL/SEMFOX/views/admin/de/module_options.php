@@ -12,9 +12,9 @@
         'SHOP_MODULE_GROUP_WBL_SEMFOX_CONNECTION'              => 'Verbindung',
         'SHOP_MODULE_GROUP_WBL_SEMFOX_GENERAL'                 => 'Allgemein',
         'SHOP_MODULE_GROUP_WBL_SEMFOX_SUGGEST'                 => 'Such-Suggest',
-        'SHOP_MODULE_sWBLSEMFOXAPIKey'                         => 'API Key',
-        'SHOP_MODULE_sWBLSEMFOXConnectionTimeout'              => 'Timeout der Verbindung',
-        'SHOP_MODULE_sWBLSEMFOXCustomerId'                     => 'Customer ID',
+        'SHOP_MODULE_sWBLSEMFOXAPIKey'                         => 'Ihr Semfox API-Key',
+        'SHOP_MODULE_sWBLSEMFOXConnectionTimeout'              => 'Zeitbeschränkung bis zum Verbindungsaufbau',
+        'SHOP_MODULE_sWBLSEMFOXCustomerId'                     => 'Ihre Semfox Customer-ID',
         'SHOP_MODULE_sWBLSEMFOXIDField'                        => '! ID-Feld',
         'SHOP_MODULE_sWBLSEMFOXIDField_oxartnum'               => 'Artikelnummer',
         'SHOP_MODULE_sWBLSEMFOXIDField_oxean'                  => 'EAN',
@@ -25,7 +25,7 @@
         'SHOP_MODULE_sWBLSEMFOXQueryInstantFeedbackPos_bottom' => 'unten',
         'SHOP_MODULE_sWBLSEMFOXQueryInstantFeedbackPos_none'   => 'verstecken',
         'SHOP_MODULE_sWBLSEMFOXQueryInstantFeedbackPos_top'    => 'oben',
-        'SHOP_MODULE_sWBLSEMFOXPort'                           => 'SEMFOX Port',
+        'SHOP_MODULE_sWBLSEMFOXPort'                           => 'Ihre Semfox Netzwerk-Adresse',
         'SHOP_MODULE_sWBLSEMFOXSuggestEnterCallback'           => '! Callback-Inhalt f&uuml;r die Enter-Taste',
-        'SHOP_MODULE_sWBLSEMFOXSuggestThrottleTime'            => 'Wartezeit in Milisekunden zwischen Tastenanschl&auml;gen'
+        'SHOP_MODULE_sWBLSEMFOXSuggestThrottleTime'            => 'Wartezeit in Milisekunden zwischen Tastenanschl&auml;gen, in denen kein Vorschlag aufgerufen werden soll'
     );
