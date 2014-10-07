@@ -11,6 +11,8 @@
     use SEMFOX\Wrapper,
         SEMFOX\Transport\Exception as SEMFOXException;
 
+    require_once __DIR__ . DIRECTORY_SEPARATOR . 'wblsemfox_logger.php';
+
     /**
      * The search module for OXID.
      * @author     blange <code@wbl-konzept.de>
