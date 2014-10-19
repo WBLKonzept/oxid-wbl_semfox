@@ -18,7 +18,7 @@
 				[{* You should prevent the simple ' in your HTML Codes! *}]
 				extraHtml : '[{$sSEMFOXExtraHTML|strip|replace:"'":"\'"}]',
 			[{/if}]
-			suggestUrl                : 'http://semfox.com:[{$oConfig->getConfigParam('sWBLSEMFOXPort')|default:'8585'}]/queries/suggest?apiKey=apiKey=[{$oConfig->getConfigParam('sWBLSEMFOXAPIKey')}]&customerId=[{$oConfig->getConfigParam('sWBLSEMFOXCustomerId')}]&query=',
+			suggestUrl                : '[{$oViewConf->getBaseDir()}]/modules/WBL/SEMFOX/suggest-proxy.php?query=',
 			queryVisualizationHeadline: '[{$oConfig->getConfigParam('sWBLSEMFOXQueryVisualizationHeadline')|default:"Ihre Suche Visualisiert"}]',
 			enterCallback             : function (text, link) {
 				[{if $sEnterCallback}]
