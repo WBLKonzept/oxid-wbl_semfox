@@ -34,9 +34,10 @@
         } // if
 
         $oSF = new Wrapper(array(
-            'apiKey'     => $oConfig->getConfigParam('sWBLSEMFOXAPIKey'),
-            'customerId' => $oConfig->getConfigParam('sWBLSEMFOXCustomerId'),
-            'restPort'   => $oConfig->getConfigParam('sWBLSEMFOXPort'),
+            'apiKey'         => $oConfig->getConfigParam('sWBLSEMFOXAPIKey'),
+            'customerId'     => $oConfig->getConfigParam('sWBLSEMFOXCustomerId'),
+            'requestTimeout' => (int) $oConfig->getConfigParam('sWBLSEMFOXSuggestTimeout'),
+            'restPort'       => $oConfig->getConfigParam('sWBLSEMFOXPort'),
         ));
 
         $sContent = (string) $oSF->queries->suggest->get(array('query' => $sQuery));

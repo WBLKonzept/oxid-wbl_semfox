@@ -186,9 +186,10 @@
             if (!$this->oWBLSEMFOXWrapper) {
                 $oConfig = $this->getConfig();
                 $this->oWBLSEMFOXWrapper = new Wrapper(array(
-                    'apiKey' => $oConfig->getConfigParam('sWBLSEMFOXAPIKey'),
-                    'customerId' => $oConfig->getConfigParam('sWBLSEMFOXCustomerId'),
-                    'restPort' => $oConfig->getConfigParam('sWBLSEMFOXPort'),
+                    'apiKey'         => $oConfig->getConfigParam('sWBLSEMFOXAPIKey'),
+                    'customerId'     => $oConfig->getConfigParam('sWBLSEMFOXCustomerId'),
+                    'requestTimeout' => $oConfig->getConfigParam('sWBLSEMFOXConnectionTimeout'),
+                    'restPort'       => $oConfig->getConfigParam('sWBLSEMFOXPort')
                 ));
             } // if
 
