@@ -8,8 +8,9 @@
      * @version    $id$
      */
 
-    use SEMFOX\Wrapper,
-        SEMFOX\Transport\Exception as SEMFOXException;
+    use SEMFOX\Response,
+        SEMFOX\Transport\Exception as SEMFOXException,
+        SEMFOX\Wrapper;
 
     /**
      * The search module for OXID.
@@ -138,12 +139,12 @@
 
         /**
          * Returns a select finding articles.
-         * @param stdClass $oHit
+         * @param Response $oHit
          * @param string|void $mSQLSorting
          * @return string
          * @todo Complete refactoring of this method in a second step, because preventing this query is a primary target!
          */
-        protected function getWBLSEMFOXSearchSelect(stdClass $oHit = null, $mSQLSorting = null)
+        protected function getWBLSEMFOXSearchSelect(Response $oHit = null, $mSQLSorting = null)
         {
             if (!$oHit) {
                 $oHit = static::getLastWBLSEMFOXHit();
@@ -182,9 +183,10 @@
             if (!$this->oWBLSEMFOXWrapper) {
                 $oConfig = $this->getConfig();
                 $this->oWBLSEMFOXWrapper = new Wrapper(array(
-                    'apiKey' => $oConfig->getConfigParam('sWBLSEMFOXAPIKey'),
-                    'customerId' => $oConfig->getConfigParam('sWBLSEMFOXCustomerId'),
-                    'restPort' => $oConfig->getConfigParam('sWBLSEMFOXPort'),
+                    'apiKey'         => $oConfig->getConfigParam('sWBLSEMFOXAPIKey'),
+                    'customerId'     => $oConfig->getConfigParam('sWBLSEMFOXCustomerId'),
+                    'requestTimeout' => $oConfig->getConfigParam('sWBLSEMFOXConnectionTimeout'),
+                    'restPort'       => $oConfig->getConfigParam('sWBLSEMFOXPort')
                 ));
             } // if
 
@@ -193,10 +195,10 @@
 
         /**
          * Sets the last SEMFOX hit.
-         * @param stdClass $oHit
-         * @return stdClass
+         * @param Response $oHit
+         * @return Response
          */
-        static public function setLastWBLSEMFOXHit(stdClass $oHit)
+        static public function setLastWBLSEMFOXHit(Response $oHit)
         {
             return static::$oLastWBLSEMFOXHit = $oHit;
         } // function

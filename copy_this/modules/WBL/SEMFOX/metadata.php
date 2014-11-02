@@ -97,6 +97,12 @@
                 'value' => 3
             ),
             array(
+                'group' => 'WBL_SEMFOX_CONNECTION',
+                'name'  => 'sWBLSEMFOXSuggestTimeout',
+                'type'  => 'num',
+                'value' => 1
+            ),
+            array(
                 'constraints' => 'oxid|oxartnum|oxean',
                 'group'       => 'WBL_SEMFOX_ARTICLES',
                 'name'        => 'sWBLSEMFOXIDField',
