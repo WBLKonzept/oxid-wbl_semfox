@@ -8,8 +8,9 @@
      * @version    $id$
      */
 
-    use SEMFOX\Wrapper,
-        SEMFOX\Transport\Exception as SEMFOXException;
+    use SEMFOX\Response,
+        SEMFOX\Transport\Exception as SEMFOXException,
+        SEMFOX\Wrapper;
 
     require_once __DIR__ . DIRECTORY_SEPARATOR . 'wblsemfox_logger.php';
 
@@ -140,12 +141,12 @@
 
         /**
          * Returns a select finding articles.
-         * @param stdClass $oHit
+         * @param Response $oHit
          * @param string|void $mSQLSorting
          * @return string
          * @todo Complete refactoring of this method in a second step, because preventing this query is a primary target!
          */
-        protected function getWBLSEMFOXSearchSelect(stdClass $oHit = null, $mSQLSorting = null)
+        protected function getWBLSEMFOXSearchSelect(Response $oHit = null, $mSQLSorting = null)
         {
             if (!$oHit) {
                 $oHit = static::getLastWBLSEMFOXHit();
@@ -196,10 +197,10 @@
 
         /**
          * Sets the last SEMFOX hit.
-         * @param stdClass $oHit
-         * @return stdClass
+         * @param Response $oHit
+         * @return Response
          */
-        static public function setLastWBLSEMFOXHit(stdClass $oHit)
+        static public function setLastWBLSEMFOXHit(Response $oHit)
         {
             return static::$oLastWBLSEMFOXHit = $oHit;
         } // function

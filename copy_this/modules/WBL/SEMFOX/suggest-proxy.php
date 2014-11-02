@@ -23,6 +23,9 @@
         $sQuery  = oxConfig::getParameter('query');
     } // else
 
+    use SEMFOX\Wrapper,
+        SEMFOX\Transport\Exception as SEMFOXException;
+
     $sContent = '';
 
     if ($sQuery) {
@@ -30,9 +33,13 @@
             $sPort = 8585;
         } // if
 
-        $sContent = file_get_contents(
-            "http://semfox.com:{$sPort}/queries/suggest?apiKey=apiKey={$oConfig->getConfigParam('sWBLSEMFOXAPIKey')}&customerId={$oConfig->getConfigParam('sWBLSEMFOXCustomerId')}&query={$sQuery}"
-        );
+        $oSF = new Wrapper(array(
+            'apiKey'     => $oConfig->getConfigParam('sWBLSEMFOXAPIKey'),
+            'customerId' => $oConfig->getConfigParam('sWBLSEMFOXCustomerId'),
+            'restPort'   => $oConfig->getConfigParam('sWBLSEMFOXPort'),
+        ));
+
+        $sContent = (string) $oSF->queries->suggest->get(array('query' => $sQuery));
     } // if
 
     if (!$sContent) {
