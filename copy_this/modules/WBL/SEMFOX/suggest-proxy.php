@@ -40,7 +40,11 @@
             'restPort'       => $oConfig->getConfigParam('sWBLSEMFOXPort'),
         ));
 
-        $sContent = (string) $oSF->queries->suggest->get(array('query' => $sQuery));
+        try {
+            $sContent = (string) $oSF->queries->suggest->get(array('query' => $sQuery));
+        } catch (SEMFOXException $oExc) {
+            // silent catch
+        } // catch
     } // if
 
     if (!$sContent) {
