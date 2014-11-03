@@ -11,8 +11,9 @@
     $sWBLSEMFOXOXIDConfig  = class_exists('oxRegistry', false) ? oxRegistry::getConfig() : oxConfig::getInstance();
     $sWBLSEMFOXOXIDVersion = substr($sWBLSEMFOXOXIDConfig->getVersion(), 0, 5);
     $aWBLSEMFOXClasses     = array(
-        'oxarticle' => 'WBL/SEMFOX/app/model/wblsemfox_article',
-        'oxsearch'  => 'WBL/SEMFOX/app/model/wblsemfox_search'
+        'oxarticle'     => 'WBL/SEMFOX/app/model/wblsemfox_article',
+        'oxarticlelist' => 'WBL/SEMFOX/app/model/wblsemfox_articlelist',
+        'oxsearch'      => 'WBL/SEMFOX/app/model/wblsemfox_search'
     );
 
     $aWBLSEMFOXFiles = array(
@@ -119,5 +120,5 @@
         'title'       => 'WBL SEMFOX',
         'thumbnail'   => 'wbl_logo.jpg',
         'url'         => 'http://wbl-konzept.de',
-        'version'     => '1.0.1'
+        'version'     => '1.0.2'
     );

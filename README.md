@@ -10,5 +10,6 @@ Install:
 
 ```
 oxarticle => WBL/SEMFOX/app/model/wblsemfox_article
+oxarticlelist => WBL/SEMFOX/app/model/wblsemfox_articlelist
 oxsearch  => WBL/SEMFOX/app/model/wblsemfox_search
 ```
