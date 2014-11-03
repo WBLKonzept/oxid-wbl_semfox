@@ -185,8 +185,7 @@
                 $this->oWBLSEMFOXWrapper = new Wrapper(array(
                     'apiKey'         => $oConfig->getConfigParam('sWBLSEMFOXAPIKey'),
                     'customerId'     => $oConfig->getConfigParam('sWBLSEMFOXCustomerId'),
-                    'requestTimeout' => $oConfig->getConfigParam('sWBLSEMFOXConnectionTimeout'),
-                    'restPort'       => $oConfig->getConfigParam('sWBLSEMFOXPort')
+                    'requestTimeout' => $oConfig->getConfigParam('sWBLSEMFOXConnectionTimeout')
                 ));
             } // if
 

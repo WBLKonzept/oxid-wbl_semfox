@@ -53,8 +53,7 @@
 
                 $this->setWBLSEMFOXWrapper(new Wrapper(array(
                     'apiKey'     => $oConfig->getConfigParam('sWBLSEMFOXAPIKey'),
-                    'customerId' => $oConfig->getConfigParam('sWBLSEMFOXCustomerId'),
-                    'restPort'   => $oConfig->getConfigParam('sWBLSEMFOXPort'),
+                    'customerId' => $oConfig->getConfigParam('sWBLSEMFOXCustomerId')
                 )));
             } // if
 

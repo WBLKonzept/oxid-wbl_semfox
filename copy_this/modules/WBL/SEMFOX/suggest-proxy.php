@@ -29,15 +29,10 @@
     $sContent = '';
 
     if ($sQuery) {
-        if (!$sPort = $oConfig->getConfigParam('sWBLSEMFOXPort')) {
-            $sPort = 8585;
-        } // if
-
         $oSF = new Wrapper(array(
             'apiKey'         => $oConfig->getConfigParam('sWBLSEMFOXAPIKey'),
             'customerId'     => $oConfig->getConfigParam('sWBLSEMFOXCustomerId'),
-            'requestTimeout' => (int) $oConfig->getConfigParam('sWBLSEMFOXSuggestTimeout'),
-            'restPort'       => $oConfig->getConfigParam('sWBLSEMFOXPort'),
+            'requestTimeout' => (int) $oConfig->getConfigParam('sWBLSEMFOXSuggestTimeout')
         ));
 
         try {
