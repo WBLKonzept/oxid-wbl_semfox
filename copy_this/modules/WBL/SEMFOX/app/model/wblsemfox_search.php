@@ -163,7 +163,8 @@
                     $aNos[] = $aHit->articleNumber;
                 } // foreach
 
-                $sReturn .= ' AND ' . $this->getConfig()->getConfigParam('sWBLSEMFOXIDField') . ' IN (' . implode(',', oxDb::getDb()->quoteArray($aNos)) . ')';
+                $sReturn .= ' AND ' . $this->getConfig()->getConfigParam('sWBLSEMFOXIDField') .
+                    ' IN (' . implode(',', oxDb::getDb()->quoteArray($aNos)) . ')';
 
                 if ($mSQLSorting) {
                     $sReturn .= 'ORDER BY ' . $mSQLSorting;

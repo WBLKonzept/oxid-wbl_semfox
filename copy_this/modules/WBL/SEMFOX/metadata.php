@@ -11,8 +11,9 @@
     $sWBLSEMFOXOXIDConfig  = class_exists('oxRegistry', false) ? oxRegistry::getConfig() : oxConfig::getInstance();
     $sWBLSEMFOXOXIDVersion = substr($sWBLSEMFOXOXIDConfig->getVersion(), 0, 5);
     $aWBLSEMFOXClasses     = array(
-        'oxarticle' => 'WBL/SEMFOX/app/model/wblsemfox_article',
-        'oxsearch'  => 'WBL/SEMFOX/app/model/wblsemfox_search'
+        'oxarticle'     => 'WBL/SEMFOX/app/model/wblsemfox_article',
+        'oxarticlelist' => 'WBL/SEMFOX/app/model/wblsemfox_articlelist',
+        'oxsearch'      => 'WBL/SEMFOX/app/model/wblsemfox_search'
     );
 
     $aWBLSEMFOXFiles = array(
