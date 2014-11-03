@@ -110,7 +110,7 @@
          *
          * @return null;
          */
-        public function loadSearchIds($sSearchStr = '', $sSearchCat = '',  $sSearchVendor = '', $sSearchManufacturer = '')
+        public function loadSearchIds($sSearchStr = '', $sSearchCat = '', $sSearchVendor = '', $sSearchManufacturer = '')
         {
             $bSearched = false;
             $mReturn   = null;
