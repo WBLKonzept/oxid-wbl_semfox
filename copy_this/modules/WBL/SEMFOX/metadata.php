@@ -86,12 +86,6 @@
             ),
             array(
                 'group' => 'WBL_SEMFOX_CONNECTION',
-                'name'  => 'sWBLSEMFOXPort',
-                'type'  => 'str',
-                'value' => '8585'
-            ),
-            array(
-                'group' => 'WBL_SEMFOX_CONNECTION',
                 'name'  => 'sWBLSEMFOXConnectionTimeout',
                 'type'  => 'num',
                 'value' => 3

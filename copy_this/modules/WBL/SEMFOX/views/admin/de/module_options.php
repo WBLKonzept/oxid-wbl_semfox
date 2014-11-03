@@ -25,7 +25,6 @@
         'SHOP_MODULE_sWBLSEMFOXQueryInstantFeedbackPos_bottom' => 'unten',
         'SHOP_MODULE_sWBLSEMFOXQueryInstantFeedbackPos_none'   => 'verstecken',
         'SHOP_MODULE_sWBLSEMFOXQueryInstantFeedbackPos_top'    => 'oben',
-        'SHOP_MODULE_sWBLSEMFOXPort'                           => 'SEMFOX Port',
         'SHOP_MODULE_sWBLSEMFOXSuggestEnterCallback'           => '! Callback-Inhalt f&uuml;r die Enter-Taste',
         'SHOP_MODULE_sWBLSEMFOXSuggestThrottleTime'            => 'Wartezeit in Milisekunden zwischen Tastenanschl&auml;gen'
     );
