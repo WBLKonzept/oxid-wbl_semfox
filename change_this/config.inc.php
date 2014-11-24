@@ -1,4 +1,5 @@
 <?php
+    $this->bNoWBLSEMFOXCSS        = false;
     $this->bWBLSEMFOXWithLogging  = true;
     $this->sWBLSEMFOXAPIKey       = 'TODO';
     $this->sWBLSEMFOXCustomerId   = 'TODO';
