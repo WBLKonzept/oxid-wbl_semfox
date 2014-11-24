@@ -74,6 +74,12 @@
             ),
             array(
                 'group' => 'WBL_SEMFOX_SUGGEST',
+                'name'  => 'bNoWBLSEMFOXCSS',
+                'type'  => 'bool',
+                'value' => false
+            ),
+            array(
+                'group' => 'WBL_SEMFOX_SUGGEST',
                 'name'  => 'sWBLSEMFOXQueryVisualizationHeadline',
                 'type'  => 'bool',
                 'value' => 'Ihre Suche Visualisiert'

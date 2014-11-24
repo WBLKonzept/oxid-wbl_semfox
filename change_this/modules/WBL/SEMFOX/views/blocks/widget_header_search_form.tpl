@@ -2,11 +2,14 @@
 
 [{if $oView->showSearch()}]
 	[{assign var='oConfig'        value=$oViewConf->getConfig()}]
-	[{assign var='sModuleCSS'     value=$oViewConf->getModuleUrl('WBL_SEMFOX', 'out/src/css/unibox.min.css')}]
-	[{assign var='sModuleJS'      value=$oViewConf->getModuleUrl('WBL_SEMFOX', 'out/src/js/unibox.min.js')}]
 	[{assign var='sEnterCallback' value=$oConfig->getConfigParam('sWBLSEMFOXSuggestEnterCallback')}]
 
-	[{oxstyle include=$sModuleCSS}]
+	[{if !$oConfig->getConfigParam('bNoWBLSEMFOXCSS')}]
+		[{assign var='sModuleCSS' value=$oViewConf->getModuleUrl('WBL_SEMFOX', 'out/src/css/unibox.min.css')}]
+		[{oxstyle include=$sModuleCSS}]
+	[{/if}]
+
+	[{assign var='sModuleJS' value=$oViewConf->getModuleUrl('WBL_SEMFOX', 'out/src/js/unibox.min.js')}]
 	[{oxscript include=$sModuleJS}]
 
 	[{capture name='sSEMFOXSuggestJS'}]
