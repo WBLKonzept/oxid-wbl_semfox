@@ -26,7 +26,9 @@
         'SHOP_MODULE_sWBLSEMFOXQueryInstantFeedbackPos_bottom' => 'unten',
         'SHOP_MODULE_sWBLSEMFOXQueryInstantFeedbackPos_none'   => 'verstecken',
         'SHOP_MODULE_sWBLSEMFOXQueryInstantFeedbackPos_top'    => 'oben',
+        'SHOP_MODULE_sWBLSEMFOXSuggestArticleLimit'            => 'maximale Artikelanzahl im Suggest',
         'SHOP_MODULE_sWBLSEMFOXSuggestEnterCallback'           => '! Callback-Inhalt f&uuml;r die Enter-Taste',
+        'SHOP_MODULE_sWBLSEMFOXSuggestSearchLimit'             => 'Such-Vorschl&auml;ge',
         'SHOP_MODULE_sWBLSEMFOXSuggestTimeout'                 => 'Timeout f&uuml;r Suggest',
         'SHOP_MODULE_sWBLSEMFOXSuggestThrottleTime'            => 'Wartezeit in Milisekunden zwischen Tastenanschl&auml;gen'
     );
