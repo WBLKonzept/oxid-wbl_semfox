@@ -36,7 +36,11 @@
         ));
 
         try {
-            $sContent = (string) $oSF->queries->suggest->get(array('query' => $sQuery));
+            $sContent = (string) $oSF->queries->suggest->get(array(
+                'limit'       => ($iLimit = (int) $oConfig->getConfigParameter('sWBLSEMFOXSuggestArticleLimit')) ? $iLimit : 8,
+                'numSuggests' => ($iLimit = (int) $oConfig->getConfigParameter('sWBLSEMFOXSuggestSearchLimit')) ? $iLimit : 5,
+                'query'       => $sQuery
+            ));
         } catch (SEMFOXException $oExc) {
             // silent catch
         } // catch

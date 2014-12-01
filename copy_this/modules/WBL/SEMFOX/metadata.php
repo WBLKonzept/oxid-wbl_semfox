@@ -56,6 +56,18 @@
             ),
             array(
                 'group' => 'WBL_SEMFOX_SUGGEST',
+                'name'  => 'sWBLSEMFOXSuggestArticleLimit',
+                'type'  => 'num',
+                'value' => 8
+            ),
+            array(
+                'group' => 'WBL_SEMFOX_SUGGEST',
+                'name'  => 'sWBLSEMFOXSuggestSearchLimit',
+                'type'  => 'num',
+                'value' => 5
+            ),
+            array(
+                'group' => 'WBL_SEMFOX_SUGGEST',
                 'name'  => 'sWBLSEMFOXSuggestThrottleTime',
                 'type'  => 'num',
                 'value' => 50
@@ -71,6 +83,12 @@
                 'name'  => 'bWBLSEMFOXHighlight',
                 'type'  => 'bool',
                 'value' => true
+            ),
+            array(
+                'group' => 'WBL_SEMFOX_SUGGEST',
+                'name'  => 'bNoWBLSEMFOXCSS',
+                'type'  => 'bool',
+                'value' => false
             ),
             array(
                 'group' => 'WBL_SEMFOX_SUGGEST',
@@ -120,5 +138,6 @@
         'title'       => 'WBL SEMFOX',
         'thumbnail'   => 'wbl_logo.jpg',
         'url'         => 'http://wbl-konzept.de',
-        'version'     => '1.0.2'
+        // 1.0.3 added Suggest-Limits
+        'version'     => '1.0.3'
     );

@@ -6,6 +6,7 @@
         'HELP_SHOP_MODULE_sWBLSEMFOXIDField'                   => 'Experten-Option: Dieses OXID-Feld wird genutzt, um Suchergebnisse und L&ouml;sch-Requests mit SEMFOX zu verkn&uuml;pfen.',
         'HELP_SHOP_MODULE_sWBLSEMFOXSuggestEnterCallback'      => 'Experten-Option: Dies ist der JavaScript-Code-Inhalt f&uuml;r den Enter-Callback. Bitte konsultieren Sie vorher Ihre SEMFOX-Dokumentation. Der Auslieferungszustand unterst&uuml;tzt das azure-Theme.',
         'SHOP_MODULE_aWBLSEMFOXFieldMapping'                   => 'Wie hei&szlig;en die OXID-Felder/Methoden bei SEMFOX im Import etc.',
+        'SHOP_MODULE_bNoWBLSEMFOXCSS'                          => 'Ohne SEMFOX CSS?',
         'SHOP_MODULE_bWBLSEMFOXHighlight'                      => 'Hightlight der Eingabe',
         'SHOP_MODULE_bWBLSEMFOXWithLogging'                    => 'Logging aktiv?',
         'SHOP_MODULE_GROUP_WBL_SEMFOX_ARTICLES'                => 'Artikel',
@@ -25,6 +26,9 @@
         'SHOP_MODULE_sWBLSEMFOXQueryInstantFeedbackPos_bottom' => 'unten',
         'SHOP_MODULE_sWBLSEMFOXQueryInstantFeedbackPos_none'   => 'verstecken',
         'SHOP_MODULE_sWBLSEMFOXQueryInstantFeedbackPos_top'    => 'oben',
+        'SHOP_MODULE_sWBLSEMFOXSuggestArticleLimit'            => 'maximale Artikelanzahl im Suggest',
         'SHOP_MODULE_sWBLSEMFOXSuggestEnterCallback'           => '! Callback-Inhalt f&uuml;r die Enter-Taste',
+        'SHOP_MODULE_sWBLSEMFOXSuggestSearchLimit'             => 'Such-Vorschl&auml;ge',
+        'SHOP_MODULE_sWBLSEMFOXSuggestTimeout'                 => 'Timeout f&uuml;r Suggest',
         'SHOP_MODULE_sWBLSEMFOXSuggestThrottleTime'            => 'Wartezeit in Milisekunden zwischen Tastenanschl&auml;gen'
     );
